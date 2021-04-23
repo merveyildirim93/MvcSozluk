@@ -81,11 +81,3 @@ C:\Users\W10\Desktop\MvcSozluk\bin\EntityFramework.dll
 C:\Users\W10\Desktop\MvcSozluk\bin\EntityFramework.SqlServer.dll
 C:\Users\W10\Desktop\MvcSozluk\bin\EntityFramework.xml
 C:\Users\W10\Desktop\MvcSozluk\bin\EntityFramework.SqlServer.xml
-C:\Users\W10\Desktop\MvcSozluk\bin\DataAccessLayer.dll
-C:\Users\W10\Desktop\MvcSozluk\bin\EntityLayer.dll
-C:\Users\W10\Desktop\MvcSozluk\bin\DataAccessLayer.pdb
-C:\Users\W10\Desktop\MvcSozluk\bin\DataAccessLayer.dll.config
-C:\Users\W10\Desktop\MvcSozluk\bin\EntityLayer.pdb
-C:\Users\W10\Desktop\MvcSozluk\bin\EntityLayer.dll.config
-C:\Users\W10\Desktop\MvcSozluk\bin\BusinessLayer.dll
-C:\Users\W10\Desktop\MvcSozluk\bin\BusinessLayer.pdb
