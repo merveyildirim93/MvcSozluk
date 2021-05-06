@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IRepository<Type>
+    public interface IRepository<T>
     {
-        List<Type> List();
-        void Insert(Type type);
-        void Update(Type type);
-        void Delete(Type type);
+        List<T> List();
+        void Insert(T t);
+        void Delete(T t);
+        void Update(T t);
 
-        List<Type> List(Expression<Func<Type, bool>> filter);
+        List<T> List(Expression<Func<T, bool>> filter);
     }
 }

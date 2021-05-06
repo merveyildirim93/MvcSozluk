@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    interface IAboutDal:IRepository<About>
+    public interface IAboutDal : IRepository<About>
     {
     }
 }

@@ -10,22 +10,16 @@ namespace BusinessLayer.Concrete
 {
     public class CategoryManager
     {
-        GenericRepository<Category> CategoryRepository = new GenericRepository<Category>();
+        GenericReporistory<Category> genericReporistory = new GenericReporistory<Category>();
+
         public List<Category> GetAllBL()
         {
-            return CategoryRepository.List();
+            return genericReporistory.List();
         }
-        public void CatogoryAddBL(Category category)
+
+        public void CategoryAddBL(Category category)
         {
-            if(category.CategoryName == "" || category.CategoryName.Length <= 3 || category.CategoryName.Length >= 51 || category.CategoryDescription == "")
-            {
-                // hata mesajı dönecek
-            }
-            else
-            {
-                CategoryRepository.Insert(category);
-            }
+            genericReporistory.Insert(category);
         }
-            
     }
 }

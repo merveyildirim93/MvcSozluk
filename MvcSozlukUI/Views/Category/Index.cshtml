@@ -1,0 +1,46 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary" style="width: 90%; float: left; padding-top: 7px;">Kategoriler</h6>
+        <a href="#" class="btn btn-primary btn-sm">Yeni Kategori</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Kategori</th>
+                        <th>Açıklama</th>
+                        <th>Düzenle</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.CategoryName</td>
+                            <td>@item.CategoryDescription</td>
+                            <td><a href="#" class="btn btn-success btn-sm">Düzenle</a></td>
+                            <td><a href="#" class="btn btn-success btn-sm">Sil</a></td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    .dataTables_paginate {
+        float: right !important;
+    }
+</style>
