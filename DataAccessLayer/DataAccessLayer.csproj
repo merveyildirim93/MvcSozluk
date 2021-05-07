@@ -60,6 +60,12 @@
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericReporistory.cs" />
+    <Compile Include="Entity\EfAboutDal.cs" />
+    <Compile Include="Entity\EfCategoryDal.cs" />
+    <Compile Include="Entity\EfContactDal.cs" />
+    <Compile Include="Entity\EfContentDal.cs" />
+    <Compile Include="Entity\EfHeadingDal.cs" />
+    <Compile Include="Entity\EfWriterDal.cs" />
     <Compile Include="Migrations\202105062021333_writerIdForeing.cs" />
     <Compile Include="Migrations\202105062021333_writerIdForeing.designer.cs">
       <DependentUpon>202105062021333_writerIdForeing.cs</DependentUpon>
