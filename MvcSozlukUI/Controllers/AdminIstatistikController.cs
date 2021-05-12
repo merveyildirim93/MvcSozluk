@@ -27,9 +27,7 @@ namespace MvcSozlukUI.Controllers
             var enConBasligaSahipKategori = context.Headings.GroupBy(x => x.Category.CategoryName).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault();
             ViewBag.EnConBasligaSahipKategori = enConBasligaSahipKategori;
 
-            var kategoriTrue = context.Categories.Count(x => x.CategoryStatus == true);
-            var kategoriFalse = context.Categories.Count(x => x.CategoryStatus == false);
-            var trueFalse = kategoriTrue - kategoriFalse;
+            var trueFalse = context.Categories.Count(x => x.CategoryStatus == true) - context.Categories.Count(x => x.CategoryStatus == false);
             ViewBag.TrueFalse = trueFalse;
 
             return View();
