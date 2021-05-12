@@ -24,7 +24,11 @@ namespace MvcSozlukUI.Controllers
                 .Count();
             ViewBag.IcindeAHarfiOlanYazarlar = icindeAHarfiOlanYazarlar;
 
-            var enConBasligaSahipKategori = context.Headings.GroupBy(x => x.Category.CategoryName).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault();
+            var enConBasligaSahipKategori = context.Headings
+                .GroupBy(x => x.Category.CategoryName)
+                .OrderByDescending(z => z.Count())
+                .Select(y => y.Key)
+                .FirstOrDefault();
             ViewBag.EnConBasligaSahipKategori = enConBasligaSahipKategori;
 
             var trueFalse = context.Categories.Count(x => x.CategoryStatus == true) - context.Categories.Count(x => x.CategoryStatus == false);
