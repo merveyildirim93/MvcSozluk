@@ -10,7 +10,6 @@ namespace MvcSozlukUI.Controllers
     public class AdminStatisticsController : Controller
     {
         Context context = new Context();
-        // GET: AdminIstatistik
         public ActionResult Index()
         {
             var toplamKategori = context.Categories.Count().ToString();

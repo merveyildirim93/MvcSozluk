@@ -30,3 +30,4 @@ C:\Users\W10\Desktop\PROJECTS\MvcSozluk\DataAccessLayer\obj\Debug\DataAccessLaye
 C:\Users\W10\Desktop\PROJECTS\MvcSozluk\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
 C:\Users\W10\Desktop\PROJECTS\MvcSozluk\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\W10\Desktop\PROJECTS\MvcSozluk\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\W10\Desktop\PROJECTS\MvcSozluk\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig_addWriterAbout.resources

@@ -26,3 +26,7 @@ textarea {
 .widthPercent100 {
     width: 100%;
 }
+
+.verticalAlignMiddle {
+    vertical-align: middle !important;
+}

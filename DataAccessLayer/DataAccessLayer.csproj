@@ -70,6 +70,10 @@
     <Compile Include="Migrations\202105062021333_writerIdForeing.designer.cs">
       <DependentUpon>202105062021333_writerIdForeing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105142044350_mig_addWriterAbout.cs" />
+    <Compile Include="Migrations\202105142044350_mig_addWriterAbout.designer.cs">
+      <DependentUpon>202105142044350_mig_addWriterAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +90,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105062021333_writerIdForeing.resx">
       <DependentUpon>202105062021333_writerIdForeing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105142044350_mig_addWriterAbout.resx">
+      <DependentUpon>202105142044350_mig_addWriterAbout.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

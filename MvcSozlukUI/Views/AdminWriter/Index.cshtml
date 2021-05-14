@@ -1,0 +1,80 @@
+﻿@using EntityLayer.Concrete
+@model List<Writer>
+
+@{
+    ViewBag.Title = "Yazarlar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary" style="width: 90%; float: left; padding-top: 7px;">Yazarlar</h6>
+        <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#writerAddModel" style="width:100px;">Yeni Yazar</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Yazar</th>
+                        <th>Mail Adresi</th>
+                        <th style="text-align:center;"><i class="fas fa-fw fa-pen"></i></th>
+                        <th style="text-align:center;"><i class="fa fa-heading" aria-hidden="true"></i></th>
+                        <th style="text-align:center;"><i class="fa fa-comment" aria-hidden="true"></i></th>
+                        <th style="text-align:center;"><i class="fa fa-times" aria-hidden="true"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td style="text-align:center;"><img src="~/Images/@item.WriterImage" class="img-profile rounded-circle" width="32" height="32"></td>
+                            <td>@item.WriterName</td>
+                            <td>@item.WriterMail</td>
+                            <td><a href="/AdminWriter/UpdateWriter/@item.WriterId" class="btn btn-success btn-sm widthPercent100" title="Düzenle"><i class="fas fa-fw fa-pen" title="Düzenle"></i> </a></td>
+                            <td><a href="#" class="btn btn-success btn-sm widthPercent100" title="Başlıkları Getir"><i class="fa fa-heading" aria-hidden="true" title="Başlıkları Getir"></i> </a></td>
+                            <td><a href="#" class="btn btn-success btn-sm widthPercent100" title="Yorumları Getir"><i class="fa fa-comment" aria-hidden="true" title="Yorumları Getir"></i> </a></td>
+                            <td><a href="/AdminWriter/DeleteWriter/@item.WriterId" class="btn btn-danger btn-sm widthPercent100" title="Sil"><i class="fa fa-times" aria-hidden="true" title="Sil"></i> </a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="writerAddModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Yazar Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("AddWriter", "AdminWriter", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    <input type="text" name="WriterName" id="WriterName" class="form-control" placeholder="Yazar adı ve soyadını girin" />
+                    <br />
+                    <input type="text" name="WriterAbout" id="WriterAbout" class="form-control" placeholder="Yazar hakkında bilgiler" />
+                    <br />
+                    <input type="text" name="WriterMail" id="WriterMail" class="form-control" placeholder="Mail adresi girin" />
+                    <br />
+                    <input type="text" name="WriterPassword" id="WriterPassword" class="form-control" placeholder="Parola girin" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .dataTables_paginate {
+        float: right !important;
+    }
+</style>
