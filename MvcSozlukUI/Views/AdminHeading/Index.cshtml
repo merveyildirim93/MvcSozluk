@@ -1,0 +1,42 @@
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary" style="width: 90%; float: left; padding-top: 7px;">Başlıklar</h6>
+        <a href="/AdminHeading/AddHeading/" class="btn btn-primary btn-sm">Yeni Başlık</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Başlık</th>
+                        <th>Tarih</th>
+                        <th>Kategori</th>
+                        <th>Yazar</th>
+                        <th style="text-align:center;"><i class="fas fa-fw fa-pen"></i></th>
+                        <th style="text-align:center;"><i class="fa fa-times" aria-hidden="true"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.HeadingName</td>
+                            <td>@item.HeadingDate.ToString("dd/MM/yyyy")</td>
+                            <td>@item.Category.CategoryName</td>
+                            <td>@item.Writer.WriterName</td>
+                            <td><a href="/AdminHeading/UpdateHeading/@item.HeadingId" class="btn btn-success btn-sm widthPercent100" title="Düzenle"><i class="fas fa-fw fa-pen" title="Düzenle"></i></a></td>
+                            <td><a href="/AdminHeading/DeleteHeading/@item.HeadingId" class="btn btn-danger btn-sm widthPercent100" title="Sil"><i class="fa fa-times" aria-hidden="true" title="Sil"></i> </a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
