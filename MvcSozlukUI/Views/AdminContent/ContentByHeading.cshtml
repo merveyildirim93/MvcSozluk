@@ -1,0 +1,29 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+@{
+    ViewBag.Title = "ContentByHeading";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    <link href="/AdminTemplate/css/CommentBar.css" rel="stylesheet">
+}
+
+<div class="container mt-12">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-12">
+            <div class="headings d-flex justify-content-between align-items-center mb-3">
+                <h5>Başlığa Yazılan Yazılar (@ViewBag.ContentsCount)</h5>
+
+            </div>
+            @foreach(var item in Model)
+            {
+            <div class="card p-3 mt-2">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="user d-flex flex-row align-items-center"> <img src="/Images/@item.Writer.WriterImage" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-success">@item.Writer.WriterName</small> <small class="font-weight-bold">@item.ContentValue </small></span> </div> <small>@item.ContentDate.ToString("dd/MM/yyyy")</small>
+                </div>
+                
+            </div>
+            }
+
+        </div>
+    </div>
+</div>
+

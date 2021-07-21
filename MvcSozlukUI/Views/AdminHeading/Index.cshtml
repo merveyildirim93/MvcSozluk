@@ -19,6 +19,8 @@
                         <th>Tarih</th>
                         <th>Kategori</th>
                         <th>Yazar</th>
+                        <th>Durum</th>
+                        <th style="text-align:center;"><i class="fa fa-bookmark" aria-hidden="true"></i></th>
                         <th style="text-align:center;"><i class="fas fa-fw fa-pen"></i></th>
                         <th style="text-align:center;"><i class="fa fa-times" aria-hidden="true"></i></th>
                     </tr>
@@ -26,14 +28,35 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>@item.HeadingName</td>
-                            <td>@item.HeadingDate.ToString("dd/MM/yyyy")</td>
-                            <td>@item.Category.CategoryName</td>
-                            <td>@item.Writer.WriterName</td>
-                            <td><a href="/AdminHeading/UpdateHeading/@item.HeadingId" class="btn btn-success btn-sm widthPercent100" title="Düzenle"><i class="fas fa-fw fa-pen" title="Düzenle"></i></a></td>
-                            <td><a href="/AdminHeading/DeleteHeading/@item.HeadingId" class="btn btn-danger btn-sm widthPercent100" title="Sil"><i class="fa fa-times" aria-hidden="true" title="Sil"></i> </a></td>
-                        </tr>
+                    <tr>
+                        <td>@item.HeadingName</td>
+                        <td>@item.HeadingDate.ToString("dd/MM/yyyy")</td>
+                        <td><span class="badge badge-warning">@item.Category.CategoryName</span></td>
+                        <td>@item.Writer.WriterName</td>
+                        <td>
+                            @if (item.HeadingStatus == true)
+                            {
+                                <span class="badge badge-success">Aktif</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-danger">Pasif</span>
+                            }
+                        </td>
+                        <td><a href="/AdminContent/ContentByHeading/@item.HeadingId" class="btn btn-success btn-sm widthPercent100" title="Yazıları Getir"><i class="fa fa-bookmark" aria-hidden="true" title="Yazıları Getir"></i> </a></td>
+                        <td><a href="/AdminHeading/UpdateHeading/@item.HeadingId" class="btn btn-success btn-sm widthPercent100" title="Düzenle"><i class="fas fa-fw fa-pen" title="Düzenle"></i></a></td>
+                        <td>
+                            @if (item.HeadingStatus == true)
+                            {
+                            <a href="/AdminHeading/DeleteHeading/@item.HeadingId" class="btn btn-danger btn-sm widthPercent100" title="Pasif Yap"><i class="fa fa-times" aria-hidden="true" title="Pasif Yap"></i> Pasif Yap </a>
+                            }
+                            else
+                            {
+                        <a href="/AdminHeading/DeleteHeading/@item.HeadingId" class="btn btn-danger btn-sm widthPercent100" title="Aktif Yap"><i class="fa fa-check" aria-hidden="true" title="Aktif Yap"></i> Aktif Yap </a>
+                            }
+                            
+                        </td>
+                    </tr>
                     }
                 </tbody>
             </table>

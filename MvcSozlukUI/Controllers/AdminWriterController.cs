@@ -60,5 +60,6 @@ namespace MvcSozlukUI.Controllers
             writerManager.WriterUpdate(writer);
             return RedirectToAction("Index");
         }
+
     }
 }

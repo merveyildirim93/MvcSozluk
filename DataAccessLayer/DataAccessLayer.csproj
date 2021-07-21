@@ -74,6 +74,14 @@
     <Compile Include="Migrations\202105142044350_mig_addWriterAbout.designer.cs">
       <DependentUpon>202105142044350_mig_addWriterAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107211520186_add_writerStatus.cs" />
+    <Compile Include="Migrations\202107211520186_add_writerStatus.designer.cs">
+      <DependentUpon>202107211520186_add_writerStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107211732316_add_contentStatus.cs" />
+    <Compile Include="Migrations\202107211732316_add_contentStatus.designer.cs">
+      <DependentUpon>202107211732316_add_contentStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105142044350_mig_addWriterAbout.resx">
       <DependentUpon>202105142044350_mig_addWriterAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107211520186_add_writerStatus.resx">
+      <DependentUpon>202107211520186_add_writerStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107211732316_add_contentStatus.resx">
+      <DependentUpon>202107211732316_add_contentStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
