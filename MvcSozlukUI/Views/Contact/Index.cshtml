@@ -1,0 +1,188 @@
+﻿@using EntityLayer.Concrete
+@model List<Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/mailBox.css" rel="stylesheet">
+}
+<div class="container bootstrap snippets bootdeys">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
+                <!--mail inbox start-->
+                <div class="mail-box">
+                    <aside class="sm-side">
+                        <div class="user-head">
+                            <a href="javascript:;" class="inbox-avatar">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="img-responsive">
+                            </a>
+                            <div class="user-name">
+                                <h5><a href="#">Jonathan Smith</a></h5>
+                                <span><a href="#">jsmith@gmail.com</a></span>
+                            </div>
+                        </div>
+                        <div class="inbox-body">
+                            <a class="btn btn-compose" data-toggle="modal" href="#myModal" data-original-title="" title="">
+                                Gelen Mesajlar
+                            </a>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title">Compose</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="form-horizontal" role="form">
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label">To</label>
+                                                    <div class="col-lg-10">
+                                                        <input type="text" class="form-control" id="inputEmail1" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label">Cc / Bcc</label>
+                                                    <div class="col-lg-10">
+                                                        <input type="text" class="form-control" id="cc" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label">Subject</label>
+                                                    <div class="col-lg-10">
+                                                        <input type="text" class="form-control" id="inputPassword1" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-2 control-label">Message</label>
+                                                    <div class="col-lg-10">
+                                                        <textarea name="" id="" class="form-control" cols="30" rows="10"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-lg-offset-2 col-lg-10">
+                                                        <span class="btn green fileinput-button" data-original-title="" title="">
+                                                            <i class="fa fa-plus fa fa-white"></i>
+                                                            <span>Attachment</span>
+                                                            <input type="file" multiple="" name="files[]">
+                                                        </span>
+                                                        <button type="submit" class="btn btn-send" data-original-title="" title="">Send</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+                        </div>
+
+                        <ul class="inbox-nav inbox-divider">
+                            <li class="active">
+                                <a href="#"><i class="fa fa-inbox"></i> Gelen Mesajlar</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-envelope-o"></i> Gönderilen Mesajlar</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-bookmark-o"></i> Önemli Mesajlar</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class=" fa fa-external-link"></i> Taslaklar</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class=" fa fa-trash-o"></i> Çöp Kutusu</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    <aside class="lg-side">
+                        <div class="inbox-head">
+                            <h3>Gelen Mesajlar</h3>
+                            <form class="pull-right position" action="#">
+                                <div class="input-append">
+                                    <input type="text" placeholder="Mesajlarda Ara" class="sr-input">
+                                    <button type="button" class="btn sr-btn" data-original-title="" title=""><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="inbox-body">
+                            <div class="mail-option">
+                                <div class="chk-all">
+                                    <input type="checkbox" class="mail-checkbox mail-group-checkbox">
+                                    <div class="btn-group">
+                                        <a class="btn mini all" href="#" data-toggle="dropdown" data-original-title="" title="">
+                                            All
+                                            <i class="fa fa-angle-down "></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#"> None</a></li>
+                                            <li><a href="#"> Read</a></li>
+                                            <li><a href="#"> Unread</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="btn mini tooltips" href="#" data-toggle="dropdown" data-placement="top" data-original-title="Refresh">
+                                        <i class=" fa fa-refresh"></i>
+                                    </a>
+                                </div>
+                                <div class="btn-group hidden-phone">
+                                    <a class="btn mini blue" href="#" data-toggle="dropdown" data-original-title="" title="">
+                                        More
+                                        <i class="fa fa-angle-down "></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                                        <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group">
+                                    <a class="btn mini blue" href="#" data-toggle="dropdown" data-original-title="" title="">
+                                        Move to
+                                        <i class="fa fa-angle-down "></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                                        <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                    </ul>
+                                </div>
+                                <ul class="unstyled inbox-pagination">
+                                    <li><span>1-50 of 234</span></li>
+                                    <li>
+                                        <a href="#" class="np-btn"><i class="fa fa-angle-left  pagination-left"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="np-btn"><i class="fa fa-angle-right pagination-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <table class="table table-inbox table-hover">
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr class="">
+                                            <td class="inbox-small-cells">
+                                                <input type="checkbox" class="mail-checkbox">
+                                            </td>
+                                            <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                            <td class="view-message dont-show"><span class="font-weight-bold text-primary">@item.UserName</span></td>
+                                            <td class="view-message ">@item.Subject - <span class="text-gray-500"> @item.Message.Substring(0, 20)</span></td>
+                                            <td class="view-message  text-right">9:27 AM</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </aside>
+                </div>
+                <!--mail inbox end-->
+            </div>
+        </div>
+    </div>
+</div>
+

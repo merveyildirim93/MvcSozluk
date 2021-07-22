@@ -1,0 +1,48 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary" style="width: 90%; float: left; padding-top: 7px;">Hakkımızda Verileri</h6>
+        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#aboutPopup">Yeni Giriş</button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Açıklama 1</th>
+                        <th>Açıklama 2</th>
+                        <th>Resim 1</th>
+                        <th>Resim 2</th>
+                        <th style="text-align:center;"><i class="fas fa-fw fa-pen"></i></th>
+                        <th style="text-align:center;"><i class="fa fa-times" aria-hidden="true"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.AboutDetails1</td>
+                            <td>@item.AboutDetails2</td>
+                            <td>@item.AboutImage1</td>
+                            <td>@item.AboutImage2</td>
+
+                            <td><a href="/AdminAbout/UpdateAbout/@item.AboutId" class="btn btn-success btn-sm widthPercent100" title="Düzenle"><i class="fas fa-fw fa-pen" title="Düzenle"></i></a></td>
+                            <td>
+                                <a href="/AdminAbout/DeleteAbout/@item.AboutId" class="btn btn-danger btn-sm widthPercent100" title="Sil"><i class="fa fa-times" aria-hidden="true" title="Sil"></i> </a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("aboutAdd", "AdminAbout")

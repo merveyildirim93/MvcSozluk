@@ -1,0 +1,30 @@
+﻿@using (Html.BeginForm("AboutAdd", "AdminAbout", FormMethod.Post))
+{
+    <div class="modal" tabindex="-1" role="dialog" id="aboutPopup">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hakkımızda Metin Girişi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label class="col-form-label">Metin 1:</label>
+                    <input type="text" class="form-control" id="AboutDetails1" name="AboutDetails1">
+
+                    <label class="col-form-label">Metin 2:</label>
+                    <input type="text" class="form-control" id="AboutDetails2" name="AboutDetails2">
+                    <label class="col-form-label">Resim 1:</label>
+                    <input type="text" class="form-control" id="AboutImage1" name="AboutImage1">
+                    <label class="col-form-label">Resim 2:</label>
+                    <input type="text" class="form-control" id="AboutImage2" name="AboutImage2">
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" value="Kaydet" />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
